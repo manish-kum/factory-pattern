@@ -4,19 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Factory<T> {
-	private   Map<String, Instance<T>> factory = new HashMap<>();
+	private Map<String, Instance<T>> factory = new HashMap<>();
 
-	public   T getEncryptor(String key) {
+	public synchronized T getEncryptor(String key) {
 
 		Instance<T> test = factory.get(key);
 		if (test != null)
-			return  test.getInstance();
+			return test.getInstance();
 		else
 			return null;
 	}
-	
-	public void put(String key, Instance<T> value) {
+
+	public synchronized void put(String key, Instance<T> value) {
 		factory.put(key, value);
-		
+
 	}
 }
