@@ -1,6 +1,6 @@
 package util;
 /*
-Functional interface for creating Instances
+Functional interface for creating any type ofInstances
 */
 @FunctionalInterface
 public interface Instance<E> {
