@@ -1,8 +1,10 @@
 package util;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Supplier;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ConcurrentHashMap;
+
+
 
 public class Factory<T> {
 	private  ConcurrentMap<String, Supplier<T>> factoryMap = new ConcurrentHashMap<>();
